@@ -5,6 +5,10 @@ import android.os.Bundle;
 
 public class Main4Activity extends AppCompatActivity {
 
+    String Hola;
+
+    Hola = "Mundo";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
