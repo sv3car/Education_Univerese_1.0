@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3f51b5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="progress_bg">#727072</color>
+    <color name="progress_text">#ededed</color>
+    <color name="hold_sesion">#114c7b</color>
+    <color name="btns_sesion">#1972b8</color>
+    <color name="down_sesion_fr2">#4f000000</color>
+    <color name="up_sesion_fr2">#00000000</color>
+    <color name="text_down_sesion_fr2">#c4c4c4</color>
+    <color name="text_up_sesion_fr2">#ffffff</color>
+</resources>
