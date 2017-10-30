@@ -1,25 +1,23 @@
 package com.universe.education.education_univerese_10;
 
-import android.net.Uri;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.universe.education.education_univerese_10.FragmentsInicio.FragmentInicio1;
 import com.universe.education.education_univerese_10.FragmentsSesion.FragmentSesion1;
-import com.universe.education.education_univerese_10.FragmentsSesion.FragmentSesion2;
-import com.universe.education.education_univerese_10.FragmentsSesion.FragmentSesion3;
+import com.universe.education.education_univerese_10.FragmentsSesion.FragmentSesionAbout;
+import com.universe.education.education_univerese_10.FragmentsSesion.FragmentSesionHome;
+import com.universe.education.education_univerese_10.FragmentsSesion.FragmentSesionVideos;
 import com.universe.education.education_univerese_10.FragmentsSesion.FragmentSesion4;
-import com.universe.education.education_univerese_10.FragmentsSesion.FragmentSesion5;
 
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener,
         FragmentSesion1.OnFragmentInteractionListener,
-        FragmentSesion2.OnFragmentInteractionListener,
-        FragmentSesion3.OnFragmentInteractionListener,
+        FragmentSesionHome.OnFragmentInteractionListener,
+        FragmentSesionVideos.OnFragmentInteractionListener,
         FragmentSesion4.OnFragmentInteractionListener,
-        FragmentSesion5.OnFragmentInteractionListener{
+        FragmentSesionAbout.OnFragmentInteractionListener{
 
     Button btnfr1, btnfr2, btnfr3, btnfr4, btnfr5;
 
@@ -28,7 +26,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        FragmentSesion2 fragmento2 = new FragmentSesion2();
+        FragmentSesionHome fragmento2 = new FragmentSesionHome();
         getSupportFragmentManager().beginTransaction().add(R.id.contenedor, fragmento2).commit();
 
         btnfr1 = (Button)findViewById(R.id.btnFrag1);
@@ -67,7 +65,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                 btnfr3.setBackgroundColor(getResources().getColor(R.color.btns_sesion));
                 btnfr4.setBackgroundColor(getResources().getColor(R.color.btns_sesion));
                 btnfr5.setBackgroundColor(getResources().getColor(R.color.btns_sesion));
-                FragmentSesion2 fragmento2 = new FragmentSesion2();
+                FragmentSesionHome fragmento2 = new FragmentSesionHome();
                 FragmentTransaction transition1 =  getSupportFragmentManager().beginTransaction();
                 transition1.replace(R.id.contenedor, fragmento2);
                 transition1.commit();
@@ -78,7 +76,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                 btnfr3.setBackgroundColor(getResources().getColor(R.color.hold_sesion));
                 btnfr4.setBackgroundColor(getResources().getColor(R.color.btns_sesion));
                 btnfr5.setBackgroundColor(getResources().getColor(R.color.btns_sesion));
-                FragmentSesion3 fragmento3 = new FragmentSesion3();
+                FragmentSesionVideos fragmento3 = new FragmentSesionVideos();
                 FragmentTransaction transition2 =  getSupportFragmentManager().beginTransaction();
                 transition2.replace(R.id.contenedor, fragmento3);
                 transition2.commit();
@@ -100,7 +98,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                 btnfr3.setBackgroundColor(getResources().getColor(R.color.btns_sesion));
                 btnfr4.setBackgroundColor(getResources().getColor(R.color.btns_sesion));
                 btnfr5.setBackgroundColor(getResources().getColor(R.color.hold_sesion));
-                FragmentSesion5 fragmento5 = new FragmentSesion5();
+                FragmentSesionAbout fragmento5 = new FragmentSesionAbout();
                 FragmentTransaction transition4 =  getSupportFragmentManager().beginTransaction();
                 transition4.replace(R.id.contenedor, fragmento5);
                 transition4.commit();

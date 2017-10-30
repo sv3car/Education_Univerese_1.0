@@ -1,0 +1,1114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.universe.education.education_univerese_10.Activities.ActivityProceso"
+    android:background="#dbe5f1">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/home_screen__appbar"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/home_screen__ctl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:collapsedTitleGravity="left"
+                app:contentScrim="@color/colorPrimary"
+                app:expandedTitleGravity="center|bottom"
+                app:expandedTitleTextAppearance="@style/StyleAppBar"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:title="Proceso"
+                app:titleEnabled="true">
+
+                <ImageView
+                    android:id="@+id/home_screen__image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/pantalla_ingreso_proceso"
+                    app:layout_collapseMode="parallax" />
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/home_screen_toolbar_proceso"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@android:color/transparent"
+                    app:layout_collapseMode="parallax" />
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dip"
+                    android:background="#dae4f0" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#aecadc">
+
+                    <ImageView
+                        android:id="@+id/imgV1"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_proces_avali" />
+
+                    <TextView
+                        android:id="@+id/tvProc1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/imgV1"
+                        android:text="Negociación"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/tvPorc1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/tvProc1"
+                        android:layout_alignBottom="@+id/tvProc1"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlProc1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:id="@+id/imgVThum1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="180dp"
+                                    android:layout_marginBottom="0dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_marginTop="15dp" />
+                                <Button
+                                    android:id="@+id/btnVid1"
+                                    android:layout_marginTop="72.5dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="65dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:background="@drawable/ic_play"/>
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="15dp"
+                                android:text="Video: Fase de Negociación"
+                                android:textColor="#303030"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dip"
+                    android:background="#dae4f0" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#aecadc">
+
+                    <ImageView
+                        android:id="@+id/imgV2"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_proces_avali" />
+
+                    <TextView
+                        android:id="@+id/tvProc2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/imgV2"
+                        android:text="Presupuesto"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/tvPorc2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlProc2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:id="@+id/imgVThum2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="180dp"
+                                    android:layout_marginBottom="0dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_marginTop="15dp" />
+                                <Button
+                                    android:id="@+id/btnVid2"
+                                    android:layout_marginTop="72.5dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="65dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:background="@drawable/ic_play"/>
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="15dp"
+                                android:text="Video: Fase de Presupuesto"
+                                android:textColor="#303030"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dip"
+                    android:background="#dae4f0" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#aecadc">
+
+                    <ImageView
+                        android:id="@+id/imgV3"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_proces_avali" />
+
+                    <TextView
+                        android:id="@+id/tvProc3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/imgV3"
+                        android:text="Afiliación/Membresía"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/tvPorc3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlProc3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:id="@+id/imgVThum3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="180dp"
+                                    android:layout_marginBottom="0dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_marginTop="15dp" />
+                                <Button
+                                    android:id="@+id/btnVid3"
+                                    android:layout_marginTop="72.5dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="65dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:background="@drawable/ic_play"/>
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="15dp"
+                                android:text="Video: Fase de Afilición/Membresía"
+                                android:textColor="#303030"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dip"
+                    android:background="#dae4f0" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#aecadc">
+
+                    <ImageView
+                        android:id="@+id/imgV4"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_proces_avali" />
+
+                    <TextView
+                        android:id="@+id/tvProc4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/imgV4"
+                        android:text="Documentos"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/tvPorc4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlProc4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:id="@+id/imgVThum4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="180dp"
+                                    android:layout_marginBottom="0dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_marginTop="15dp" />
+                                <Button
+                                    android:id="@+id/btnVid4"
+                                    android:layout_marginTop="72.5dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="65dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:background="@drawable/ic_play"/>
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="15dp"
+                                android:text="Video: Fase de Documentos"
+                                android:textColor="#303030"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dip"
+                    android:background="#dae4f0" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#aecadc">
+
+                    <ImageView
+                        android:id="@+id/imgV5"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_proces_avali" />
+
+                    <TextView
+                        android:id="@+id/tvProc5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/imgV5"
+                        android:text="Enrollment"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/tvPorc5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlProc5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:id="@+id/imgVThum5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="180dp"
+                                    android:layout_marginBottom="0dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_marginTop="15dp" />
+                                <Button
+                                    android:id="@+id/btnVid5"
+                                    android:layout_marginTop="72.5dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="65dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:background="@drawable/ic_play"/>
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="15dp"
+                                android:text="Video: Fase de Enrollment"
+                                android:textColor="#303030"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dip"
+                    android:background="#dae4f0" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#aecadc">
+
+                    <ImageView
+                        android:id="@+id/imgV6"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_proces_avali" />
+
+                    <TextView
+                        android:id="@+id/tvProc6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/imgV6"
+                        android:text="Loo"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/tvPorc6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlProc6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:id="@+id/imgVThum6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="180dp"
+                                    android:layout_marginBottom="0dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_marginTop="15dp" />
+                                <Button
+                                    android:id="@+id/btnVid6"
+                                    android:layout_marginTop="72.5dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="65dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:background="@drawable/ic_play"/>
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="15dp"
+                                android:text="Video: Fase de Loo"
+                                android:textColor="#303030"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dip"
+                    android:background="#dae4f0" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#aecadc">
+
+                    <ImageView
+                        android:id="@+id/imgV7"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_proces_avali" />
+
+                    <TextView
+                        android:id="@+id/tvProc7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/imgV7"
+                        android:text="Confirmación de pago"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/tvPorc7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlProc7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:id="@+id/imgVThum7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="180dp"
+                                    android:layout_marginBottom="0dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_marginTop="15dp" />
+                                <Button
+                                    android:id="@+id/btnVid7"
+                                    android:layout_marginTop="72.5dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="65dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:background="@drawable/ic_play"/>
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="15dp"
+                                android:text="Video: Fase de Confirmación de pago"
+                                android:textColor="#303030"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dip"
+                    android:background="#dae4f0" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#aecadc">
+
+                    <ImageView
+                        android:id="@+id/imgV8"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_proces_avali" />
+
+                    <TextView
+                        android:id="@+id/tvProc8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/imgV8"
+                        android:text="Pago a la escuela"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/tvPorc8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlProc8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:id="@+id/imgVThum8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="180dp"
+                                    android:layout_marginBottom="0dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_marginTop="15dp" />
+                                <Button
+                                    android:id="@+id/btnVid8"
+                                    android:layout_marginTop="72.5dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="65dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:background="@drawable/ic_play"/>
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="15dp"
+                                android:text="Video: Fase de Pago a la escuela"
+                                android:textColor="#303030"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dip"
+                    android:background="#dae4f0" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#aecadc">
+
+                    <ImageView
+                        android:id="@+id/imgV9"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_proces_avali" />
+
+                    <TextView
+                        android:id="@+id/tvProc9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/imgV9"
+                        android:text="Coes"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/tvPorc9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlProc9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:id="@+id/imgVThum9"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="180dp"
+                                    android:layout_marginBottom="0dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_marginTop="15dp" />
+                                <Button
+                                    android:id="@+id/btnVid9"
+                                    android:layout_marginTop="72.5dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="65dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:background="@drawable/ic_play"/>
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="15dp"
+                                android:text="Video: Fase de Coes"
+                                android:textColor="#303030"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dip"
+                    android:background="#dae4f0" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#aecadc">
+
+                    <ImageView
+                        android:id="@+id/imgV10"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_proces_avali" />
+
+                    <TextView
+                        android:id="@+id/tvProc10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/imgV10"
+                        android:text="Visa"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/tvPorc10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlProc10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:id="@+id/imgVThum10"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="180dp"
+                                    android:layout_marginBottom="0dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_marginTop="15dp" />
+                                <Button
+                                    android:id="@+id/btnVid10"
+                                    android:layout_marginTop="72.5dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="65dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:background="@drawable/ic_play"/>
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="15dp"
+                                android:text="Video: Fase de Visa"
+                                android:textColor="#303030"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dip"
+                    android:background="#dae4f0" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#aecadc">
+
+                    <ImageView
+                        android:id="@+id/imgV11"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_proces_avali" />
+
+                    <TextView
+                        android:id="@+id/tvProc11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/imgV11"
+                        android:text="Próximo a viajar"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/tvPorc11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlProc11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:id="@+id/imgVThum11"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="180dp"
+                                    android:layout_marginBottom="0dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_marginTop="15dp" />
+                                <Button
+                                    android:id="@+id/btnVid11"
+                                    android:layout_marginTop="72.5dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="65dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:background="@drawable/ic_play"/>
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="15dp"
+                                android:text="Video: Fase de Próximo a viajar"
+                                android:textColor="#303030"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dip"
+                    android:background="#dae4f0" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#aecadc">
+
+                    <ImageView
+                        android:id="@+id/imgV12"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_proces_avali" />
+
+                    <TextView
+                        android:id="@+id/tvProc12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/imgV12"
+                        android:text="Sin actividad"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/tvPorc12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlProc12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:id="@+id/imgVThum12"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="180dp"
+                                    android:layout_marginBottom="0dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_marginTop="15dp" />
+                                <Button
+                                    android:id="@+id/btnVid12"
+                                    android:layout_marginTop="72.5dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="65dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:background="@drawable/ic_play"/>
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="15dp"
+                                android:text="Video: Fase de Sin actividad"
+                                android:textColor="#303030"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+</FrameLayout>

@@ -1,15 +1,12 @@
 package com.universe.education.education_univerese_10.Activities;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
-import android.os.Handler;
-import android.os.Looper;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Patterns;
-import android.util.Xml;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -18,15 +15,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.universe.education.education_univerese_10.Classes.ClassConexion;
-import com.universe.education.education_univerese_10.Classes.ClassZohoVar;
-import com.universe.education.education_univerese_10.Classes.ClassZohoXMLPotential;
-import com.universe.education.education_univerese_10.FragmentsSesion.FragmentSesion2;
+import com.universe.education.education_univerese_10.Classes.ClassZohoJSONDocuments;
+import com.universe.education.education_univerese_10.Classes.ClassZohoJSONPotential;
+import com.universe.education.education_univerese_10.Classes.ClassZohoJSONQuotes;
+import com.universe.education.education_univerese_10.Classes.Potential;
+import com.universe.education.education_univerese_10.FragmentsSesion.FragmentSesionHome;
 import com.universe.education.education_univerese_10.R;
-
-import org.xmlpull.v1.XmlPullParser;
 
 import java.util.regex.Pattern;
 
@@ -45,7 +40,12 @@ public class ActivityLogin extends AppCompatActivity {
     Button btn2;
     String email;
     String password;
-    String mes;
+    View v;
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,17 +77,21 @@ public class ActivityLogin extends AppCompatActivity {
         rl.setVisibility(View.GONE);
 
         //Evento del boton iniciar con facebook
-        btn1.setOnClickListener(v ->
-                System.out.println("hola")
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    System.out.println("hola");
+                }
+            }
         );
-
-
 
         //Evento del boton iniciar con email
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                v = view;
                 email = et_email.getText().toString();
                 password = et_pass.getText().toString();
 
@@ -112,6 +116,10 @@ public class ActivityLogin extends AppCompatActivity {
                 {
                     TareaAsincrona task = new TareaAsincrona();
                     task.execute(email,password);
+                    /*Intent intent = new Intent(ActivityLogin.this, ActivitySesion.class);
+                    FragmentSesionHome.ContrFrag = false;
+                    startActivity(intent);
+                    finish();*/
                 }
             }
         });
@@ -121,7 +129,7 @@ public class ActivityLogin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                /*Intent intent = new Intent(ActivityLogin.this,ActivitySesion.class);
+                /*Intent intent = new Intent(ActivityLogin.this,ActivitySesionPrueba.class);
                 startActivity(intent);*/
             }
         });
@@ -135,9 +143,7 @@ public class ActivityLogin extends AppCompatActivity {
 
     private class TareaAsincrona extends AsyncTask<String, Integer, Boolean> {
 
-        String IdOrMes;
-        String mensaje;
-        Boolean Control = false;
+        Boolean control = false;
 
         @Override
         public void onPreExecute()
@@ -167,17 +173,20 @@ public class ActivityLogin extends AppCompatActivity {
             et_email.setEnabled(true);
             et_pass.setEnabled(true);
             tv_pass.setEnabled(true);
-            if(Control)
+            if(control)
             {
                 Intent intent = new Intent(ActivityLogin.this, ActivitySesion.class);
-                FragmentSesion2.ContrFrag = false;
+                FragmentSesionHome.ContrFrag = false;
                 startActivity(intent);
                 finish();
+                //Snackbar.make(v, ClassZohoJSONQuotes.aux +" "+ ClassZohoJSONQuotes.auxInt,Snackbar.LENGTH_LONG).show();
             }
             else
             {
-                Toast.makeText(ActivityLogin.this, mensaje,
-                        Toast.LENGTH_SHORT).show();
+
+                Snackbar.make(v, ClassConexion.mensaje,Snackbar.LENGTH_LONG).show();
+                /*Toast.makeText(ActivityLogin.this, mensaje,
+                        Toast.LENGTH_SHORT).show();*/
             }
         }
 
@@ -187,30 +196,50 @@ public class ActivityLogin extends AppCompatActivity {
             //realizar la operación aquí
             if (ClassConexion.isNetworkConnected(getApplicationContext()))
             {
-                new ClassConexion("https://crm.zoho.com/crm/private/xml/Potentials" +
-                        "/searchRecords?authtoken=8b49fd4b66f4a9e2098d9c2d79652405" +
-                        "&scope=crmapi&criteria=(Correo%20electronico:"+params[0]+")&newFormat=1");
-                ///////////////////////////////////////////////////////////////////////////////////
-                XmlPullParser parser = Xml.newPullParser();
+                new ClassConexion("https://crm.zoho.com/crm/private/json/Potentials/" +
+                        "searchRecords?authtoken=8b49fd4b66f4a9e2098d9c2d79652405&" +
+                        "scope=crmapi&&newFormat=1&version=2&" +
+                        "selectColumns=" +
+                        "Potentials(" +
+                        "Potential%20Name," +
+                        "Stage," +
+                        "Correo%20electronico," +
+                        "Codigo," +
+                        "Nivel%20de%20ingles," +
+                        "Viaja," +
+                        "Nivel%20de%20estudios," +
+                        "Numero%20pasaporte%20estudiante," +
+                        "Nacionalidad%20estudiante," +
+                        "Fecha%20Aprox%20desea%20viajar," +
+                        "Estado%20de%20aplicacion%20visa)&" +
+                        "criteria=(Correo%20electronico:"+params[0]+")");
+                new ClassZohoJSONPotential();
 
+                if (ClassZohoJSONPotential.compPot){
+                    new ClassConexion("https://crm.zoho.com/crm/private/json/Quotes/getRelatedRecords?" +
+                            "authtoken=8b49fd4b66f4a9e2098d9c2d79652405&scope=crmapi&" +
+                            "id="+Potential.getIdPot()+"&parentModule=Potentials&newFormat=1");
+                    new ClassZohoJSONQuotes();
 
-                IdOrMes = new ClassZohoXMLPotential().IdOrMes();
-                if (IdOrMes.equals("There is no data to show") ||
-                        !ClassZohoXMLPotential.correoBusc.equals(params[0]) ||
-                        !ClassZohoXMLPotential.passBusc.equals(params[1]))
-                {
-                    Control = false;
-                    mensaje = "El correo electrónico y la contraseña no coinciden";
-
+                    new ClassConexion("https://crm.zoho.com/crm/private/json/Attachments/getRelatedRecords?" +
+                            "authtoken=8b49fd4b66f4a9e2098d9c2d79652405&newFormat=1&scope=crmapi&" +
+                            "parentModule=Potentials&id="+Potential.getIdPot());
+                    new ClassZohoJSONDocuments();
                 }
-                else
-                {
-                    Control = true;
+
+                if (ClassConexion.msj) {
+                    if (!ClassZohoJSONPotential.correoBusc.equals(params[0]) ||
+                            !ClassZohoJSONPotential.passBusc.equals(params[1])) {
+                        control = false;
+                        ClassConexion.mensaje = "El correo electrónico y la contraseña no coinciden";
+                    }
+                    else {
+                        control = true;
+                    }
                 }
-            }
-            else
-            {
-                mensaje = "Verifique su conexión a internet";
+            } else {
+                ClassConexion.mensaje = "Verifique su conexión a internet";
+                control = false;
             }
             return null;
         }
@@ -223,7 +252,5 @@ public class ActivityLogin extends AppCompatActivity {
         startActivity(intent);
         finish();
         //Añade más funciones si fuese necesario
-
     }
-
 }

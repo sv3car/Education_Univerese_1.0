@@ -5,9 +5,9 @@ buildscript {
         repositories {
             jcenter {
                 //Default one is HTTPS
-                url "http://jcenter.bintray.com/"
+               //url "http://jcenter.bintray.com/"
             }
-            maven { url 'http://repo1.maven.org/maven2' }
+           //maven { url 'http://repo1.maven.org/maven2' }
         }
     }
     dependencies {
@@ -22,9 +22,9 @@ allprojects {
     repositories {
         jcenter {
             //Default one is HTTPS
-            url "http://jcenter.bintray.com/"
-        }
-        maven { url 'http://repo1.maven.org/maven2' }
+           //url "http://jcenter.bintray.com/"
+    }
+        //maven { url 'http://repo1.maven.org/maven2' }
     }
 }
 

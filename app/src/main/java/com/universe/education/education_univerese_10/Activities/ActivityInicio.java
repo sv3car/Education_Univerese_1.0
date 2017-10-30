@@ -4,9 +4,6 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.View;
@@ -18,11 +15,6 @@ import com.universe.education.education_univerese_10.FragmentsInicio.FragmentIni
 import com.universe.education.education_univerese_10.FragmentsInicio.FragmentInicio2;
 import com.universe.education.education_univerese_10.FragmentsInicio.FragmentInicio3;
 import com.universe.education.education_univerese_10.FragmentsInicio.FragmentInicio4;
-import com.universe.education.education_univerese_10.FragmentsSesion.FragmentSesion1;
-import com.universe.education.education_univerese_10.FragmentsSesion.FragmentSesion2;
-import com.universe.education.education_univerese_10.FragmentsSesion.FragmentSesion3;
-import com.universe.education.education_univerese_10.FragmentsSesion.FragmentSesion4;
-import com.universe.education.education_univerese_10.FragmentsSesion.FragmentSesion5;
 import com.universe.education.education_univerese_10.R;
 
 public class ActivityInicio extends AppCompatActivity {

@@ -1,12 +1,16 @@
 package com.universe.education.education_univerese_10.Classes;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.net.URLConnection;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -16,7 +20,8 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class ClassConexion {
 
-
+    public static String mensaje;
+    public static Boolean msj = true;
     private static HttpsURLConnection con;
 
     public static boolean isNetworkConnected(Context context)
@@ -36,31 +41,42 @@ public class ClassConexion {
     {
         try
         {
+            mensaje = "Sin mensaje";
+            msj = true;
             myurl = myurl.replace(" ","%20");
             URL url = new URL(myurl);
             con = (HttpsURLConnection) url.openConnection();
-            con.disconnect();
             con.connect();
-            con.setConnectTimeout(1000000);
-            con.setReadTimeout(1000000);
+            con.setConnectTimeout(10000);
+            con.setReadTimeout(10000);
         }
-        catch (IOException e)
+        catch (Exception e)
         {
-            e.printStackTrace();
+            //e.printStackTrace();
+            //con.disconnect();
+            msj = false;
+            mensaje = "Error de conexión";
         }
     }
 
     public static InputStream getInputStream()
     {
+        InputStream is;
         try
         {
-            return con.getInputStream();
+            is = con.getInputStream();
         }
-        catch (IOException e)
+        catch (Exception e)
         {
-            throw new RuntimeException(e);
+            is = null;
+            msj = false;
+            mensaje = "Error al obtener los datos";
         }
+
+        return is;
     }
+
+
 
 
 }

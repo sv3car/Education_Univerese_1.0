@@ -2,24 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_contact"
-        android:icon="@drawable/icono_contactar"
-        android:title="@string/title_contact" />
-
-    <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/icono_home"
+        android:iconTint="#ffffff"
         android:title="@string/title_home" />
 
     <item
         android:id="@+id/navigation_video"
         android:icon="@drawable/icono_video"
         android:title="@string/title_video" />
-
-    <item
-        android:id="@+id/navigation_info"
-        android:icon="@drawable/icono_personal"
-        android:title="@string/title_info" />
 
     <item
         android:id="@+id/navigation_about"

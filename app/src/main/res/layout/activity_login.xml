@@ -17,10 +17,12 @@
 
         <ImageView
             android:id="@+id/imv1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="center"
-            app:srcCompat="@drawable/ic_circulo_giratorio_de_puntos"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_circulo_giratorio"
             android:elevation="10dp"/>
     </RelativeLayout>
 
@@ -81,7 +83,8 @@
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:visibility="gone">
 
 
             <TextView
@@ -123,7 +126,8 @@
                 android:text="or"
                 android:textAlignment="center"
                 android:textColor="#ffffff"
-                android:textSize="17dp" />
+                android:textSize="17dp"
+                android:visibility="gone"/>
         </RelativeLayout>
 
 
@@ -137,7 +141,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textColor="#ffffff"
+                android:textColorHighlight="@color/barDarkColor"
+                android:textColorHint="@color/barDarkColor"
+                android:textColorLink="@color/btns_sesion"
+                android:foregroundTint="@color/agenttextcolor" />
 
             <EditText
                 android:id="@+id/et_pass"
@@ -145,7 +154,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:hint="Password"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColor="#ffffff"
+                android:textColorHighlight="@color/barDarkColor"
+                android:textColorHint="@color/barDarkColor"
+                android:textColorLink="@color/btns_sesion" />
 
 
         </RelativeLayout>

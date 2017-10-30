@@ -13,17 +13,18 @@ public class ClassZohoXMLPotential {
     public static String correoBusc = "";
     public  static String passBusc = "";
 
+
     //para parsea los xml
     public String IdOrMes()
     {
-        String IdOrMes = "";
+        String IdOrMes = "XML_VACIO";
         XmlPullParser parser = Xml.newPullParser();
 
         try
         {
             parser.setInput(ClassConexion.getInputStream(), null);
             int evento = parser.getEventType();
-            ClassZohoVar potentialActual = null;
+            Potential potentialActual = null;
 
             while (evento != XmlPullParser.END_DOCUMENT)
             {
@@ -40,7 +41,7 @@ public class ClassZohoXMLPotential {
                         etiqueta = parser.getName();
                         if (etiqueta.equals("row"))
                         {
-                            potentialActual = new ClassZohoVar();
+                            potentialActual = new Potential();
                         }
                         else if (potentialActual != null)
                         {
@@ -89,7 +90,7 @@ public class ClassZohoXMLPotential {
                                 {
                                     potentialActual.setFecAp(parser.nextText());
                                 }
-                                else if (atributo.equals("Estado de aplicación visa"))
+                                else if (atributo.equals("Estado de aplicacion visa"))
                                 {
                                     potentialActual.setEstVisa(parser.nextText());
                                 }
@@ -108,7 +109,8 @@ public class ClassZohoXMLPotential {
         }
         catch (Exception ex)
         {
-            throw new RuntimeException(ex);
+            ClassConexion.msj = false;
+            ClassConexion.mensaje = "Error al obtener los datos";
         }
         return IdOrMes;
     }

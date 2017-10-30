@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.universe.education.education_univerese_10.Classes.ClassZohoVar;
+import com.universe.education.education_univerese_10.Classes.Potential;
 import com.universe.education.education_univerese_10.R;
 
 
@@ -40,15 +40,15 @@ public class FragmentSesion4 extends Fragment {
         TvNivIng = (TextView) view.findViewById(R.id.TvNivIng);
         TvAplicVisa = (TextView) view.findViewById(R.id.TvAplicVisa);
 
-        TvNom.setText(ClassZohoVar.getName());
-        TvCorreoFrag.setText(ClassZohoVar.getCorreo());
-        TvNivEst.setText(ClassZohoVar.getNEst());
-        TvNumPasa.setText(ClassZohoVar.getNPass());
-        TvNac.setText(ClassZohoVar.getNacEst());
-        TvViaja.setText(ClassZohoVar.getViaja());
-        TvFecViaja.setText(ClassZohoVar.getFecAp());
-        TvNivIng.setText(ClassZohoVar.getIngles());
-        TvAplicVisa.setText(ClassZohoVar.getEstVisa());
+        TvNom.setText(Potential.getName());
+        TvCorreoFrag.setText(Potential.getCorreo());
+        TvNivEst.setText(Potential.getNEst());
+        TvNumPasa.setText(Potential.getNPass());
+        TvNac.setText(Potential.getNacEst());
+        TvViaja.setText(Potential.getViaja());
+        TvFecViaja.setText(Potential.getFecAp());
+        TvNivIng.setText(Potential.getIngles());
+        TvAplicVisa.setText(Potential.getEstVisa());
 
         return view;
     }

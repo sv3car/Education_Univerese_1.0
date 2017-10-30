@@ -3,11 +3,9 @@ package com.universe.education.education_univerese_10.FragmentsSesion;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -16,12 +14,14 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.universe.education.education_univerese_10.Activities.ActivityLogin;
-import com.universe.education.education_univerese_10.Activities.ActivitySesion;
+import com.universe.education.education_univerese_10.Activities.ActivityDocuments;
+import com.universe.education.education_univerese_10.Activities.ActivityPersonal;
+import com.universe.education.education_univerese_10.Activities.ActivityProceso;
+import com.universe.education.education_univerese_10.Activities.ActivityQuotes;
 import com.universe.education.education_univerese_10.R;
 
 
-public class FragmentSesion2 extends Fragment{
+public class FragmentSesionHome extends Fragment{
 
     private ViewPager mViewPager;
 
@@ -38,7 +38,7 @@ public class FragmentSesion2 extends Fragment{
 
         
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_sesion2, container, false);
+        View view = inflater.inflate(R.layout.fragment_sesion_home, container, false);
 
 
         tv1 = (TextView) view.findViewById(R.id.tv1);
@@ -56,6 +56,16 @@ public class FragmentSesion2 extends Fragment{
         rl3 = (RelativeLayout) view.findViewById(R.id.rl3);
         rl4 = (RelativeLayout) view.findViewById(R.id.rl4);
 
+        tv1.setTextColor(getResources().getColor(R.color.text_up_sesion_fr2));
+        rl1.setBackgroundColor(getResources().getColor(R.color.up_sesion_fr2));
+        tv2.setTextColor(getResources().getColor(R.color.text_up_sesion_fr2));
+        rl2.setBackgroundColor(getResources().getColor(R.color.up_sesion_fr2));
+        tv3.setTextColor(getResources().getColor(R.color.text_up_sesion_fr2));
+        rl3.setBackgroundColor(getResources().getColor(R.color.up_sesion_fr2));
+        tv4.setTextColor(getResources().getColor(R.color.text_up_sesion_fr2));
+        rl4.setBackgroundColor(getResources().getColor(R.color.up_sesion_fr2));
+
+
         Typeface face = Typeface.createFromAsset(getContext().getAssets(),"fonts/audiowide.ttf");
         tv1.setTypeface(face);
         tv2.setTypeface(face);
@@ -67,7 +77,7 @@ public class FragmentSesion2 extends Fragment{
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getContext(), ActivitySesion.class);
+                Intent intent = new Intent(getContext(), ActivitySesionPrueba.class);
                 startActivity(intent);
 
             }
@@ -85,7 +95,7 @@ public class FragmentSesion2 extends Fragment{
                     case (MotionEvent.ACTION_UP):
                         tv1.setTextColor(getResources().getColor(R.color.text_up_sesion_fr2));
                         rl1.setBackgroundColor(getResources().getColor(R.color.up_sesion_fr2));
-                        Intent intent = new Intent(getContext(), ActivitySesion.class);
+                        Intent intent = new Intent(getContext(), ActivityPersonal.class);
                         startActivity(intent);
                         getActivity().finish();
                         return true;
@@ -106,9 +116,9 @@ public class FragmentSesion2 extends Fragment{
                     case (MotionEvent.ACTION_UP):
                         tv2.setTextColor(getResources().getColor(R.color.text_up_sesion_fr2));
                         rl2.setBackgroundColor(getResources().getColor(R.color.up_sesion_fr2));
-                        /*Intent intent = new Intent(getContext(), ActivitySesion.class);
+                        Intent intent = new Intent(getContext(), ActivityQuotes.class);
                         startActivity(intent);
-                        getActivity().finish()*/
+                        getActivity().finish();
                         return true;
                 }
                 return false;
@@ -127,9 +137,9 @@ public class FragmentSesion2 extends Fragment{
                     case (MotionEvent.ACTION_UP):
                         tv3.setTextColor(getResources().getColor(R.color.text_up_sesion_fr2));
                         rl3.setBackgroundColor(getResources().getColor(R.color.up_sesion_fr2));
-                        /*Intent intent = new Intent(getContext(), ActivitySesion.class);
+                        Intent intent = new Intent(getContext(), ActivityDocuments.class);
                         startActivity(intent);
-                        getActivity().finish()*/
+                        getActivity().finish();
                         return true;
                 }
                 return false;
@@ -148,9 +158,9 @@ public class FragmentSesion2 extends Fragment{
                     case (MotionEvent.ACTION_UP):
                         tv4.setTextColor(getResources().getColor(R.color.text_up_sesion_fr2));
                         rl4.setBackgroundColor(getResources().getColor(R.color.up_sesion_fr2));
-                        /*Intent intent = new Intent(getContext(), ActivitySesion.class);
+                        Intent intent = new Intent(getContext(), ActivityProceso.class);
                         startActivity(intent);
-                        getActivity().finish()*/
+                        getActivity().finish();
                         return true;
                 }
                 return false;
@@ -165,5 +175,6 @@ public class FragmentSesion2 extends Fragment{
 
 
     public interface OnFragmentInteractionListener {
+
     }
 }

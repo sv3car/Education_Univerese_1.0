@@ -9,13 +9,13 @@ import android.view.ViewGroup;
 import com.universe.education.education_univerese_10.R;
 
 
-public class FragmentSesion5 extends Fragment {
+public class FragmentSesionAbout extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sesion5, container, false);
+        return inflater.inflate(R.layout.fragment_sesion_about, container, false);
 
 
     }

@@ -1,382 +1,442 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#e2e2e2">
-
-    <ScrollView
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:fitsSystemWindows="true">
 
-        <LinearLayout
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/home_screen__appbar"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/home_screen__ctl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:title="Información Personal"
+                app:titleEnabled="true"
+                app:contentScrim="@color/colorPrimary"
+                app:expandedTitleGravity="center_horizontal"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <ImageView
+                    android:id="@+id/home_screen__image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="center"
+                    android:src="@drawable/pantalla_ingreso_informacionpersonal"
+                    app:layout_collapseMode="parallax" />
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/home_screen_toolbar_personal"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@android:color/transparent"
+                    app:layout_collapseMode="parallax"
+                    />
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="14dp">
-
-            <android.support.v7.widget.CardView
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/cv"
-                android:layout_marginBottom="5dp">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="Datos Personales"
-                        android:textAlignment="viewStart"
-                        android:textColor="#303030"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-
-
-            <android.support.v7.widget.CardView
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/cv1"
-                android:layout_marginBottom="15dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Nombre:"
-                        android:textAlignment="viewStart"
-                        android:textColor="#303030"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:id="@+id/TvNom"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginTop="5dp"
-                        android:text="TvNom"
-                        android:textAlignment="viewStart"
-                        android:textColor="#303030"
-                        android:textSize="14sp" />
-                    <View
-                        android:layout_height="2dip"
-                        android:background="#34585454"
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="5dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Correo electrónico:"
-                        android:textAlignment="viewStart"
-                        android:textColor="#303030"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:id="@+id/TvCorreoFrag"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginTop="5dp"
-                        android:text="TvCorreoFrag"
-                        android:textAlignment="viewStart"
-                        android:textColor="#303030"
-                        android:textSize="14sp" />
-                    <View
-                        android:layout_height="2dip"
-                        android:background="#34585454"
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="5dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Numero pasaporte:"
-                        android:textAlignment="viewStart"
-                        android:textColor="#303030"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/TvNumPasa"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginTop="5dp"
-                        android:gravity="center"
-                        android:text="TvNumPasa"
-                        android:textColor="#303030"
-                        android:textSize="14sp" />
-                    <View
-                        android:layout_height="2dip"
-                        android:background="#34585454"
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="5dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Nacionalidad:"
-                        android:textAlignment="viewStart"
-                        android:textColor="#303030"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:id="@+id/TvNac"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginTop="5dp"
-                        android:gravity="center"
-                        android:text="TvNac"
-                        android:textColor="#303030"
-                        android:textSize="14sp"
-                        android:layout_marginBottom="5dp"/>
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/cv2"
-                android:layout_marginBottom="5dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="Estudios"
-                        android:textAlignment="viewStart"
-                        android:textColor="#303030"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/cv3"
-                android:layout_marginBottom="15dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:duplicateParentState="true"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Nivel de estudios:"
-                        android:textAlignment="viewStart"
-                        android:textColor="#303030"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/TvNivEst"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginTop="5dp"
-                        android:gravity="center"
-                        android:text="TvNivEst"
-                        android:textColor="#303030"
-                        android:textSize="14sp" />
-
-                    <View
-                        android:layout_height="2dip"
-                        android:background="#34585454"
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="5dp"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Nivel de ingles:"
-                        android:textAlignment="viewStart"
-                        android:textColor="#303030"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/TvNivIng"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginTop="5dp"
-                        android:gravity="center"
-                        android:text="TvNivIng"
-                        android:textColor="#303030"
-                        android:textSize="14sp"
-                        android:layout_marginBottom="5dp"/>
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/cv4"
-                android:layout_marginBottom="5dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="Datos de Viaje"
-                        android:textAlignment="viewStart"
-                        android:textColor="#303030"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/cv5">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#d6d6d6">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:duplicateParentState="true"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="14dp">
 
-                    <TextView
+                    <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Viaja:"
-                        android:textAlignment="viewStart"
-                        android:textColor="#ff000000"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:id="@+id/cv"
+                        android:layout_marginBottom="5dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/TvViaja"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginTop="5dp"
-                        android:gravity="center"
-                        android:text="TvViaja"
-                        android:textColor="#ff000000"
-                        android:textSize="14sp" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Datos Personales"
+                                android:textAlignment="viewStart"
+                                android:textColor="#303030"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dip"
-                        android:layout_marginTop="5dp"
-                        android:background="#34585454" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
 
-                    <TextView
+
+
+                    <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Fecha a viajar:"
-                        android:textAlignment="viewStart"
-                        android:textColor="#ff000000"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:id="@+id/cv1"
+                        android:layout_marginBottom="15dp">
 
-                    <TextView
-                        android:id="@+id/TvFecViaja"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginTop="5dp"
-                        android:gravity="center"
-                        android:text="TvFecViaja"
-                        android:textColor="#ff000000"
-                        android:textSize="14sp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Nombre:"
+                                android:textAlignment="viewStart"
+                                android:textColor="#303030"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
 
-                    <View
+
+
+                            <TextView
+                                android:id="@+id/TvNom"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginTop="5dp"
+                                android:text="TvNom"
+                                android:textAlignment="viewStart"
+                                android:textColor="#303030"
+                                android:textSize="14sp" />
+                            <View
+                                android:layout_height="2dip"
+                                android:background="#34585454"
+                                android:layout_width="match_parent"
+                                android:layout_marginTop="5dp"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Correo electrónico:"
+                                android:textAlignment="viewStart"
+                                android:textColor="#303030"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/TvCorreoFrag"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginTop="5dp"
+                                android:text="TvCorreoFrag"
+                                android:textAlignment="viewStart"
+                                android:textColor="#303030"
+                                android:textSize="14sp" />
+                            <View
+                                android:layout_height="2dip"
+                                android:background="#34585454"
+                                android:layout_width="match_parent"
+                                android:layout_marginTop="5dp"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Numero pasaporte:"
+                                android:textAlignment="viewStart"
+                                android:textColor="#303030"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/TvNumPasa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center"
+                                android:text="TvNumPasa"
+                                android:textColor="#303030"
+                                android:textSize="14sp" />
+                            <View
+                                android:layout_height="2dip"
+                                android:background="#34585454"
+                                android:layout_width="match_parent"
+                                android:layout_marginTop="5dp"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Nacionalidad:"
+                                android:textAlignment="viewStart"
+                                android:textColor="#303030"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/TvNac"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center"
+                                android:text="TvNac"
+                                android:textColor="#303030"
+                                android:textSize="14sp"
+                                android:layout_marginBottom="5dp"/>
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="2dip"
-                        android:layout_marginTop="5dp"
-                        android:background="#34585454" />
+                        android:layout_height="wrap_content"
+                        android:id="@+id/cv2"
+                        android:layout_marginBottom="5dp">
 
-                    <TextView
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:text="Estudios"
+                                android:textAlignment="viewStart"
+                                android:textColor="#303030"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Aplicación de visa:"
-                        android:textAlignment="viewStart"
-                        android:textColor="#ff000000"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:id="@+id/cv3"
+                        android:layout_marginBottom="15dp">
 
-                    <TextView
-                        android:id="@+id/TvAplicVisa"
-                        android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:duplicateParentState="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Nivel de estudios:"
+                                android:textAlignment="viewStart"
+                                android:textColor="#303030"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/TvNivEst"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center"
+                                android:text="TvNivEst"
+                                android:textColor="#303030"
+                                android:textSize="14sp" />
+
+                            <View
+                                android:layout_height="2dip"
+                                android:background="#34585454"
+                                android:layout_width="match_parent"
+                                android:layout_marginTop="5dp"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Nivel de ingles:"
+                                android:textAlignment="viewStart"
+                                android:textColor="#303030"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/TvNivIng"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center"
+                                android:text="TvNivIng"
+                                android:textColor="#303030"
+                                android:textSize="14sp"
+                                android:layout_marginBottom="5dp"/>
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="14dp"
-                        android:layout_marginTop="5dp"
-                        android:gravity="center"
-                        android:text="TvAplicVisa"
-                        android:textColor="#ff000000"
-                        android:textSize="14sp"
-                        android:layout_marginBottom="5dp"/>
+                        android:id="@+id/cv4"
+                        android:layout_marginBottom="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:text="Datos de Viaje"
+                                android:textAlignment="viewStart"
+                                android:textColor="#303030"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/cv5">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:duplicateParentState="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Viaja:"
+                                android:textAlignment="viewStart"
+                                android:textColor="#ff000000"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/TvViaja"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center"
+                                android:text="TvViaja"
+                                android:textColor="#ff000000"
+                                android:textSize="14sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dip"
+                                android:layout_marginTop="5dp"
+                                android:background="#34585454" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Fecha a viajar:"
+                                android:textAlignment="viewStart"
+                                android:textColor="#ff000000"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/TvFecViaja"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center"
+                                android:text="TvFecViaja"
+                                android:textColor="#ff000000"
+                                android:textSize="14sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dip"
+                                android:layout_marginTop="5dp"
+                                android:background="#34585454" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Aplicación de visa:"
+                                android:textAlignment="viewStart"
+                                android:textColor="#ff000000"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/TvAplicVisa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center"
+                                android:text="TvAplicVisa"
+                                android:textColor="#ff000000"
+                                android:textSize="14sp"
+                                android:layout_marginBottom="5dp"/>
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
 
                 </LinearLayout>
+            </ScrollView>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
 
-            </android.support.v7.widget.CardView>
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:src="@mipmap/ic_edit"
+            app:layout_anchor="@id/home_screen__appbar"
+            app:layout_anchorGravity="bottom|right|end" />
 
-        </LinearLayout>
-    </ScrollView>
-
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -4,19 +4,20 @@ package com.universe.education.education_univerese_10.Classes;
  * Created by CARLOS on 10/09/2017.
  */
 
-public class ClassZohoVar {
+public class Potential {
 
     //Potentials
-    public static String IdPot;
-    public static String Name;
-    public static String Correo;
-    public static String Ingles;
-    public static String Viaja;
-    public static String NEst;
-    public static String NPass;
-    public static String NacEst;
-    public static String FecAp;
-    public static String EstVisa;
+    private static String IdPot;
+    private static String Name;
+    private static String Correo;
+    private static String Ingles;
+    private static String Viaja;
+    private static String NEst;
+    private static String NPass;
+    private static String NacEst;
+    private static String FecAp;
+    private static String EstVisa;
+    private static String fase;
 
     //Potentials
     public static String getIdPot() {
@@ -79,5 +80,10 @@ public class ClassZohoVar {
     public void setEstVisa(String EstVisa) {
         this.EstVisa = EstVisa;
     }
-
+    public static String getFase() {
+        return fase;
+    }
+    public void setFase(String fase) {
+        this.fase = fase;
+    }
 }
