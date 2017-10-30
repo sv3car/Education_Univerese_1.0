@@ -19,6 +19,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         FragmentSesion4.OnFragmentInteractionListener,
         FragmentSesionAbout.OnFragmentInteractionListener{
 
+
+    //hola
     Button btnfr1, btnfr2, btnfr3, btnfr4, btnfr5;
 
     @Override
