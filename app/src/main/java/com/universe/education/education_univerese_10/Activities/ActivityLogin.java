@@ -171,7 +171,7 @@ public class ActivityLogin extends AppCompatActivity {
             //progressDialog.dismiss();
             btn1.setEnabled(true);
             btn2.setEnabled(true);
-            progressBar.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.GONE);
             et_email.setEnabled(true);
             et_pass.setEnabled(true);
             tv_pass.setEnabled(true);
