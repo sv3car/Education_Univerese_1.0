@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.universe.education.education_univerese_10.Activities.ActivityLogin">
+    tools:context="com.universe.education.education_univerese_10.Activities.ActivityRecuperarPass">
 
 
     <ProgressBar
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
-                android:text="Login"
+                android:text="Creación u olvido de contraseña"
                 android:textColor="#ffffff"
                 android:textSize="20dp" />
         </RelativeLayout>
@@ -81,7 +81,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="40dp"
-                android:text="Log intro your account and continue to eat healthy."
+                android:text="Ingrese el correo electrónico asociado a Education Universe."
                 android:textAlignment="center"
                 android:textColor="#ffffff"
                 android:textSize="15dp" />
@@ -157,7 +157,7 @@
                 android:textColorLink="@color/btns_sesion"
                 android:foregroundTint="@color/agenttextcolor" />
 
-            <EditText
+            <!--<EditText
                 android:id="@+id/et_pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -167,7 +167,7 @@
                 android:textColor="#ffffff"
                 android:textColorHighlight="@color/barDarkColor"
                 android:textColorHint="@color/barDarkColor"
-                android:textColorLink="@color/btns_sesion" />
+                android:textColorLink="@color/btns_sesion" />-->
 
 
         </RelativeLayout>
@@ -197,7 +197,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:elevation="24dp"
-                android:text="log in with Email"
+                android:text="Generar nueva contraseña"
                 android:textColor="#ffffff"
                 android:textSize="17dp" />
 
@@ -211,7 +211,7 @@
             android:layout_weight="1">
 
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/tv_pass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -222,7 +222,7 @@
                 android:layout_marginRight="20dp"
                 android:text="@string/text_subrayado3"
                 android:textColor="#ffffff"
-                android:textSize="13dp" />
+                android:textSize="13dp" />-->
 
         </RelativeLayout>
     </LinearLayout>

@@ -34,14 +34,14 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".Activities.ActivityInicio"
             android:label="@string/title_activity_inicio"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".Activities.ActivityRegister"
             android:screenOrientation="portrait" />
@@ -107,7 +107,8 @@
         <activity
             android:name=".Activities.ActivityQuotes"
             android:screenOrientation="portrait" />
-        <activity android:name=".Activities.ActivityVerQuote">
+        <activity android:name=".Activities.ActivityVerQuote"
+            android:screenOrientation="portrait">
 
             <!--
             <intent-filter>
@@ -118,7 +119,12 @@
             -->
 
         </activity>
-        <activity android:name=".Activities.ActivityProceso"></activity>
+        <activity android:name=".Activities.ActivityProceso"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.ActivityRecuperarPass"
+            android:screenOrientation="portrait">
+
+        </activity>
     </application>
 
 </manifest>

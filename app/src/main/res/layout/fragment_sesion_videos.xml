@@ -56,8 +56,8 @@
                             <Button
                                 android:id="@+id/btnVid1"
                                 android:layout_marginTop="55dp"
-                                android:layout_width="50dp"
-                                android:layout_height="65dp"
+                                android:layout_width="@dimen/anchor_play"
+                                android:layout_height="@dimen/alto_play"
                                 android:layout_centerHorizontal="true"
                                 android:background="@drawable/ic_play"/>
                         </RelativeLayout>
@@ -100,8 +100,8 @@
                             <Button
                                 android:id="@+id/btnVid2"
                                 android:layout_marginTop="55dp"
-                                android:layout_width="50dp"
-                                android:layout_height="65dp"
+                                android:layout_width="@dimen/anchor_play"
+                                android:layout_height="@dimen/alto_play"
                                 android:layout_centerHorizontal="true"
                                 android:background="@drawable/ic_play"/>
                         </RelativeLayout>
@@ -144,8 +144,8 @@
                             <Button
                                 android:id="@+id/btnVid3"
                                 android:layout_marginTop="55dp"
-                                android:layout_width="50dp"
-                                android:layout_height="65dp"
+                                android:layout_width="@dimen/anchor_play"
+                                android:layout_height="@dimen/alto_play"
                                 android:layout_centerHorizontal="true"
                                 android:background="@drawable/ic_play"/>
                         </RelativeLayout>
@@ -188,8 +188,8 @@
                             <Button
                                 android:id="@+id/btnVid4"
                                 android:layout_marginTop="55dp"
-                                android:layout_width="50dp"
-                                android:layout_height="65dp"
+                                android:layout_width="@dimen/anchor_play"
+                                android:layout_height="@dimen/alto_play"
                                 android:layout_centerHorizontal="true"
                                 android:background="@drawable/ic_play"/>
                         </RelativeLayout>
@@ -232,8 +232,8 @@
                             <Button
                                 android:id="@+id/btnVid5"
                                 android:layout_marginTop="55dp"
-                                android:layout_width="50dp"
-                                android:layout_height="65dp"
+                                android:layout_width="@dimen/anchor_play"
+                                android:layout_height="@dimen/alto_play"
                                 android:layout_centerHorizontal="true"
                                 android:background="@drawable/ic_play"/>
                         </RelativeLayout>
@@ -276,8 +276,8 @@
                             <Button
                                 android:id="@+id/btnVid6"
                                 android:layout_marginTop="55dp"
-                                android:layout_width="50dp"
-                                android:layout_height="65dp"
+                                android:layout_width="@dimen/anchor_play"
+                                android:layout_height="@dimen/alto_play"
                                 android:layout_centerHorizontal="true"
                                 android:background="@drawable/ic_play"/>
                         </RelativeLayout>
@@ -320,8 +320,8 @@
                             <Button
                                 android:id="@+id/btnVid7"
                                 android:layout_marginTop="55dp"
-                                android:layout_width="50dp"
-                                android:layout_height="65dp"
+                                android:layout_width="@dimen/anchor_play"
+                                android:layout_height="@dimen/alto_play"
                                 android:layout_centerHorizontal="true"
                                 android:background="@drawable/ic_play"/>
                         </RelativeLayout>

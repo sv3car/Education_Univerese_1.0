@@ -208,7 +208,7 @@ public class ActivityDocuments extends AppCompatActivity {
                 // Muestra el resultado en la notificación si fue exitoso o no
                 if (resultado) {
                     mNotifyBuilder.setContentText("Archivo descargado correctamente");
-                    Toast.makeText(ActivityDocuments.this, "Archivo guardado en la memoria externa en la carpeta /DonwloadUniverse", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ActivityDocuments.this, "Archivo guardado en la memoria externa en la carpeta /DownloadUniverse", Toast.LENGTH_LONG).show();
                 } else {
                     mNotifyBuilder.setContentText("El archivo no se pudo descargar");
                 }
@@ -235,7 +235,7 @@ public class ActivityDocuments extends AppCompatActivity {
                         ext.equals(".ppsx") || ext.equals(".ppsm") || ext.equals(".ppt")){
                     mime = "application/vnd.ms-excel";
                 } else {
-                    mime = "application/octet-stream";
+                    mime = "text/plain";
                 }
 
                 Intent intent = new Intent(Intent.ACTION_VIEW);

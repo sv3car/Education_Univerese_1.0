@@ -8,11 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.universe.education.education_univerese_10.Classes.ClassConexion;
@@ -42,6 +40,8 @@ public class ActivityLogin extends AppCompatActivity {
     String password;
     View v;
 
+    protected ProgressBar progressBar;
+
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
@@ -51,6 +51,10 @@ public class ActivityLogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        progressBar = (ProgressBar) findViewById(R.id.progressBar1) ;
+        progressBar.setMax(10);
+        progressBar.setVisibility(View.GONE);
 
         rl = (RelativeLayout) findViewById(R.id.rl);
         tv1 = (TextView) findViewById(R.id.tv1);
@@ -73,8 +77,6 @@ public class ActivityLogin extends AppCompatActivity {
         et_pass.setTypeface(bell_centennial);
         tv_btn1.setTypeface(bell_centennial);
         tv_btn2.setTypeface(bell_centennial);
-
-        rl.setVisibility(View.GONE);
 
         //Evento del boton iniciar con facebook
 
@@ -150,13 +152,13 @@ public class ActivityLogin extends AppCompatActivity {
         {
             btn1.setEnabled(false);
             btn2.setEnabled(false);
-            rl.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.VISIBLE);
             et_email.setEnabled(false);
             et_pass.setEnabled(false);
             tv_pass.setEnabled(false);
-            ImageView image = (ImageView) findViewById(R.id.imv1);
+            /*ImageView image = (ImageView) findViewById(R.id.imv1);
             Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.together);
-            image.startAnimation(animation);
+            image.startAnimation(animation);*/
             //aquí se puede colocar código a ejecutarse previo
             //a la operación
         }
@@ -169,7 +171,7 @@ public class ActivityLogin extends AppCompatActivity {
             //progressDialog.dismiss();
             btn1.setEnabled(true);
             btn2.setEnabled(true);
-            rl.setVisibility(View.GONE);
+            progressBar.setVisibility(View.VISIBLE);
             et_email.setEnabled(true);
             et_pass.setEnabled(true);
             tv_pass.setEnabled(true);
