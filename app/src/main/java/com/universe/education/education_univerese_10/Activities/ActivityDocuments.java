@@ -208,6 +208,7 @@ public class ActivityDocuments extends AppCompatActivity {
                 // Muestra el resultado en la notificación si fue exitoso o no
                 if (resultado) {
                     mNotifyBuilder.setContentText("Archivo descargado correctamente");
+                    Toast.makeText(ActivityDocuments.this, "Archivo guardado en la memoria externa en la carpeta /DonwloadUniverse", Toast.LENGTH_LONG).show();
                 } else {
                     mNotifyBuilder.setContentText("El archivo no se pudo descargar");
                 }
