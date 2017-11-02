@@ -25,20 +25,20 @@ import java.util.regex.Pattern;
 
 public class ActivityLogin extends AppCompatActivity {
 
-    RelativeLayout rl;
-    TextView tv1;
-    TextView tv2;
-    TextView tv_or;
-    TextView tv_pass;
-    TextView tv_btn1;
-    TextView tv_btn2;
-    EditText et_email;
-    EditText et_pass;
-    Button btn1;
-    Button btn2;
-    String email;
-    String password;
-    View v;
+    private RelativeLayout rl;
+    private TextView tv1;
+    private TextView tv2;
+    private TextView tv_or;
+    private TextView tv_pass;
+    private TextView tv_btn1;
+    private TextView tv_btn2;
+    private EditText et_email;
+    private EditText et_pass;
+    private Button btn1;
+    private Button btn2;
+    private String email;
+    private String password;
+    private View v;
 
     protected ProgressBar progressBar;
 
