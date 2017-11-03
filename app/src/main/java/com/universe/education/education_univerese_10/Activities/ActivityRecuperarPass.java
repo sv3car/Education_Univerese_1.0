@@ -1,6 +1,5 @@
 package com.universe.education.education_univerese_10.Activities;
 
-import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.support.design.widget.Snackbar;
@@ -18,7 +17,6 @@ import com.universe.education.education_univerese_10.Classes.ClassZohoJSONDocume
 import com.universe.education.education_univerese_10.Classes.ClassZohoJSONPotential;
 import com.universe.education.education_univerese_10.Classes.ClassZohoJSONQuotes;
 import com.universe.education.education_univerese_10.Classes.Potential;
-import com.universe.education.education_univerese_10.FragmentsSesion.FragmentSesionHome;
 import com.universe.education.education_univerese_10.R;
 
 import java.util.regex.Pattern;

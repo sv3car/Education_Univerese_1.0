@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class ClassZohoJSONQuotes {
 
     public static ArrayList<Quote> listQuote;
+    public static  boolean datosSiNoQuotes;
     private String json;
     private JSONArray arrFL1;
     private JSONArray arrFL2;
@@ -23,6 +24,7 @@ public class ClassZohoJSONQuotes {
 
     public ClassZohoJSONQuotes() {
         listQuote = new ArrayList<>();
+        datosSiNoQuotes = false;
         //aux = "no";
         StringBuilder sb;
         try {
@@ -73,9 +75,11 @@ public class ClassZohoJSONQuotes {
                         arrayPres();
                         listQuote.add(quote);
                     }
+                    datosSiNoQuotes = true;
                 } else{
-                    ClassConexion.mensaje = "No hay datos para mostrar";
+                    //ClassConexion.mensaje = "No hay datos para mostrar";
                     ClassConexion.msj = true;
+                    datosSiNoQuotes = false;
                 }
             } catch (Exception e) {
                 Log.d("Descricion del error", e.toString());

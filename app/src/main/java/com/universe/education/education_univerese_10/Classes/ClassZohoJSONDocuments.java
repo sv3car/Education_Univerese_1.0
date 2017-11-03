@@ -14,11 +14,13 @@ import java.util.List;
 public class ClassZohoJSONDocuments {
 
     public static List<Document> listDocument;
+    public static boolean datosSiNoDocument;
     private String json;
     private JSONArray arrFL1;
     private Document document;
 
     public ClassZohoJSONDocuments() {
+        datosSiNoDocument = false;
         listDocument = new ArrayList<>();
         //aux = "no";
         StringBuilder sb;
@@ -68,8 +70,10 @@ public class ClassZohoJSONDocuments {
                         arrayPres();
                         listDocument.add(document);
                     }
+                    datosSiNoDocument = true;
                 } else{
-                    ClassConexion.mensaje = "No hay datos para mostrar";
+                    //ClassConexion.mensaje = "No hay datos para mostrar";
+                    datosSiNoDocument = false;
                     ClassConexion.msj = true;
                 }
             } catch (Exception e) {

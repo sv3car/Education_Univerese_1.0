@@ -18,6 +18,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.universe.education.education_univerese_10.Adapters.AdapterDocuments;
 import com.universe.education.education_univerese_10.Classes.ClassConexion;
@@ -32,6 +33,7 @@ import java.io.InputStream;
 public class ActivityDocuments extends AppCompatActivity {
 
     RecyclerView recycler;
+    TextView tvSinDatos;
     private String idDoc;
     private String docName;
     private String docSize;
@@ -45,6 +47,8 @@ public class ActivityDocuments extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_documents);
 
+        tvSinDatos = (TextView) findViewById(R.id.tvSinDatos);
+        recycler = (RecyclerView)findViewById(R.id.rvDoc);
         Toolbar toolbar = (Toolbar) findViewById(R.id.home_screen_toolbar_documento);
         setSupportActionBar(toolbar);
 
@@ -61,38 +65,42 @@ public class ActivityDocuments extends AppCompatActivity {
             }
         });
 
-        recycler = (RecyclerView)findViewById(R.id.rvDoc);
-        recycler.setHasFixedSize(true);
-        final GridLayoutManager lManager = new GridLayoutManager(ActivityDocuments.this, 2);
-        final AdapterDocuments adapter = new AdapterDocuments(ClassZohoJSONDocuments.listDocument);
+        if (ClassZohoJSONDocuments.datosSiNoDocument){
+            tvSinDatos.setVisibility(View.GONE);
+            recycler.setHasFixedSize(true);
+            final GridLayoutManager lManager = new GridLayoutManager(ActivityDocuments.this, 2);
+            final AdapterDocuments adapter = new AdapterDocuments(ClassZohoJSONDocuments.listDocument);
 
-        recycler.setAdapter(adapter);
-        recycler.setLayoutManager(lManager);
+            recycler.setAdapter(adapter);
+            recycler.setLayoutManager(lManager);
 
-        adapter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                vi = v;
-                int posAct = recycler.getChildAdapterPosition(v);
-                Document docAux;
+            adapter.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    vi = v;
+                    int posAct = recycler.getChildAdapterPosition(v);
+                    Document docAux;
 
-                docAux = ClassZohoJSONDocuments.listDocument.get(posAct);
+                    docAux = ClassZohoJSONDocuments.listDocument.get(posAct);
 
-                idDoc = docAux.getIdDoc();
-                docName = docAux.getDocName();
-                docSize = docAux.getDocSize();
+                    idDoc = docAux.getIdDoc();
+                    docName = docAux.getDocName();
+                    docSize = docAux.getDocSize();
 
-                posPunto = docName.indexOf(".");
-                lengthName = docName.length();
+                    posPunto = docName.indexOf(".");
+                    lengthName = docName.length();
 
-                try{
-                    ext = docName.substring(posPunto, lengthName);
-                } catch (Exception e){
-                    ext = "noData";
+                    try{
+                        ext = docName.substring(posPunto, lengthName);
+                    } catch (Exception e){
+                        ext = "noData";
+                    }
+                    ShowDialog();
                 }
-                ShowDialog();
-            }
-        });
+            });
+        } else {
+            recycler.setVisibility(View.GONE);
+        }
     }
 
     private class TareaAsincrona extends AsyncTask<String, Integer, Boolean> {

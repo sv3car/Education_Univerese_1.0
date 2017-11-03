@@ -68,12 +68,29 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <android.support.v7.widget.RecyclerView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/rvPres"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/rvPres"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical" />
+
+            <TextView
+                android:id="@+id/tvSinDatos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No hay datos para mostrar"
+                android:textSize="20dp"
+                android:textColor="#4d4d4d"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp" />
+
+        </RelativeLayout>
+
     </android.support.v4.widget.NestedScrollView>
 
        <!-- <android.support.design.widget.FloatingActionButton
