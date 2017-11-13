@@ -39,7 +39,6 @@ public class ActivityLogin extends AppCompatActivity {
     private String email;
     private String password;
     private View v;
-
     protected ProgressBar progressBar;
 
     @Override
