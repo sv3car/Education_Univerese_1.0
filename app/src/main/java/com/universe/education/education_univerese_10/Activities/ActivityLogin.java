@@ -39,7 +39,6 @@ public class ActivityLogin extends AppCompatActivity {
     private String email;
     private String password;
     private View v;
-
     protected ProgressBar progressBar;
 
     @Override
@@ -53,7 +52,7 @@ public class ActivityLogin extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar1) ;
-        //progressBar.setMax(10);
+        progressBar.setMax(10);
         progressBar.setVisibility(View.GONE);
 
         rl = (RelativeLayout) findViewById(R.id.rl);
