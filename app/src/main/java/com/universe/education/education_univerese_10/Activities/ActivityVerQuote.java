@@ -25,7 +25,7 @@ public class ActivityVerQuote extends AppCompatActivity {
     TextView tvFasePres;
     Button btnAtrVer;
 
-    //Intento de commit
+    //Intento de commit 2
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
