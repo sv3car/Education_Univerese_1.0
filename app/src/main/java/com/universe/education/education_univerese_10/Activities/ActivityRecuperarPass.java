@@ -16,6 +16,8 @@ import com.universe.education.education_univerese_10.Classes.ClassConexion;
 import com.universe.education.education_univerese_10.Classes.ClassZohoJSONDocuments;
 import com.universe.education.education_univerese_10.Classes.ClassZohoJSONPotential;
 import com.universe.education.education_univerese_10.Classes.ClassZohoJSONQuotes;
+import com.universe.education.education_univerese_10.Classes.ClassZohoJSONUpdatePass;
+import com.universe.education.education_univerese_10.Classes.PasswordGenerator;
 import com.universe.education.education_univerese_10.Classes.Potential;
 import com.universe.education.education_univerese_10.R;
 
@@ -30,6 +32,7 @@ public class ActivityRecuperarPass extends AppCompatActivity {
     private EditText et_email;
     private View v;
     private String email;
+    private String psw;
 
     protected ProgressBar progressBar;
 
@@ -60,6 +63,10 @@ public class ActivityRecuperarPass extends AppCompatActivity {
             public void onClick(View view) {
                 v = view;
                 email = et_email.getText().toString();
+                psw = PasswordGenerator.getPassword(
+                        PasswordGenerator.MINUSCULAS+
+                                PasswordGenerator.MAYUSCULAS+
+                                PasswordGenerator.NUMEROS,8);
 
                 if (email.equals(""))
                 {
@@ -68,7 +75,7 @@ public class ActivityRecuperarPass extends AppCompatActivity {
                     et_email.setError("Email no válido");
                 } else {
                     TareaAsincrona task = new TareaAsincrona();
-                    task.execute(email);
+                    task.execute(email,psw);
                     /*Intent intent = new Intent(ActivityLogin.this, ActivitySesion.class);
                     FragmentSesionHome.ContrFrag = false;
                     startActivity(intent);
@@ -140,30 +147,19 @@ public class ActivityRecuperarPass extends AppCompatActivity {
                         "scope=crmapi&&newFormat=1&version=2&" +
                         "selectColumns=" +
                         "Potentials(" +
-                        "Potential%20Name," +
-                        "Stage," +
-                        "Correo%20electronico," +
-                        "Codigo," +
-                        "Nivel%20de%20ingles," +
-                        "Viaja," +
-                        "Nivel%20de%20estudios," +
-                        "Numero%20pasaporte%20estudiante," +
-                        "Nacionalidad%20estudiante," +
-                        "Fecha%20Aprox%20desea%20viajar," +
-                        "Estado%20de%20aplicacion%20visa)&" +
+                        "Correo%20electronico)&" +
                         "criteria=(Correo%20electronico:"+params[0]+")");
+
                 new ClassZohoJSONPotential();
 
                 if (ClassZohoJSONPotential.compPot){
-                    new ClassConexion("https://crm.zoho.com/crm/private/json/Quotes/getRelatedRecords?" +
-                            "authtoken=8b49fd4b66f4a9e2098d9c2d79652405&scope=crmapi&" +
-                            "id="+ Potential.getIdPot()+"&parentModule=Potentials&newFormat=1");
-                    new ClassZohoJSONQuotes();
-
-                    new ClassConexion("https://crm.zoho.com/crm/private/json/Attachments/getRelatedRecords?" +
-                            "authtoken=8b49fd4b66f4a9e2098d9c2d79652405&newFormat=1&scope=crmapi&" +
-                            "parentModule=Potentials&id="+Potential.getIdPot());
-                    new ClassZohoJSONDocuments();
+                    new ClassConexion("https://crm.zoho.com/crm/private/xml/Leads" +
+                            "/updateRecords?authtoken=8b49fd4b66f4a9e2098d9c2d79652405" +
+                            "&scope=crmapi&newFormat=1&id=" + ClassZohoJSONUpdatePass.idPotPass + "&" +
+                            "xmlData=%3cLeads%3e%3crow%20no=%221%22%3e%3cFL%20val=%22Codigo%22%3e" +
+                            "" + params[1] + "" +
+                            "%3c/FL%3e%3c/row%3e%3c/Leads%3e");
+                    new ClassZohoJSONUpdatePass();
                 }
 
                 if (ClassConexion.msj) {
