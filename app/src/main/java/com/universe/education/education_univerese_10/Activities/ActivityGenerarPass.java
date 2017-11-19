@@ -1,10 +1,12 @@
 package com.universe.education.education_univerese_10.Activities;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +18,7 @@ import com.universe.education.education_univerese_10.Classes.ClassConexion;
 import com.universe.education.education_univerese_10.Classes.ClassZohoJSONPotential;
 import com.universe.education.education_univerese_10.Classes.ClassZohoJSONPotentialCons;
 import com.universe.education.education_univerese_10.Classes.ClassZohoXMLPotentialPass;
+import com.universe.education.education_univerese_10.Classes.Mail;
 import com.universe.education.education_univerese_10.Classes.PasswordGenerator;
 import com.universe.education.education_univerese_10.R;
 
@@ -31,7 +34,6 @@ public class ActivityGenerarPass extends AppCompatActivity {
     private View v;
     private String email;
     private String psw;
-    private String idPotPass;
 
     protected ProgressBar progressBar;
 
@@ -62,7 +64,6 @@ public class ActivityGenerarPass extends AppCompatActivity {
             public void onClick(View view) {
                 v = view;
                 email = et_email.getText().toString();
-                idPotPass = ClassZohoJSONPotentialCons.idPotPass;
                 psw = PasswordGenerator.getPassword(
                         PasswordGenerator.MINUSCULAS+
                                 PasswordGenerator.MAYUSCULAS+
@@ -75,7 +76,7 @@ public class ActivityGenerarPass extends AppCompatActivity {
                     et_email.setError("Email no válido");
                 } else {
                     TareaAsincrona task = new TareaAsincrona();
-                    task.execute(idPotPass,email,psw);
+                    task.execute(email,psw);
                     /*Intent intent = new Intent(ActivityLogin.this, ActivitySesion.class);
                     FragmentSesionHome.ContrFrag = false;
                     startActivity(intent);
@@ -84,7 +85,6 @@ public class ActivityGenerarPass extends AppCompatActivity {
 
             }
         });
-
     }
 
     private boolean validarEmail(String email) {
@@ -118,22 +118,7 @@ public class ActivityGenerarPass extends AppCompatActivity {
             btn2.setEnabled(true);
             progressBar.setVisibility(View.GONE);
             et_email.setEnabled(true);
-
-            if(control)
-            {
-                /*Intent intent = new Intent(ActivityLogin.this, ActivitySesion.class);
-                FragmentSesionHome.ContrFrag = false;
-                startActivity(intent);
-                finish();*/
-                //Snackbar.make(v, ClassZohoJSONQuotes.aux +" "+ ClassZohoJSONQuotes.auxInt,Snackbar.LENGTH_LONG).show();
-            }
-            else
-            {
-
-                Snackbar.make(v, ClassConexion.mensaje,Snackbar.LENGTH_LONG).show();
-                /*Toast.makeText(ActivityLogin.this, mensaje,
-                        Toast.LENGTH_SHORT).show();*/
-            }
+            Snackbar.make(v, ClassConexion.mensaje,Snackbar.LENGTH_LONG).show();
         }
 
         @Override
@@ -148,27 +133,40 @@ public class ActivityGenerarPass extends AppCompatActivity {
                         "selectColumns=" +
                         "Potentials(" +
                         "Correo%20electronico)&" +
-                        "criteria=(Correo%20electronico:"+params[1]+")");
+                        "criteria=(Correo%20electronico:"+params[0]+")");
                 new ClassZohoJSONPotentialCons();
 
-                if (ClassZohoJSONPotential.compPot){
+                if (ClassZohoJSONPotentialCons.compPot){
                     new ClassConexion("https://crm.zoho.com/crm/private/xml/Potentials" +
                             "/updateRecords?authtoken=8b49fd4b66f4a9e2098d9c2d79652405" +
-                            "&scope=crmapi&newFormat=1&id=" + params[0] + "&" +
+                            "&scope=crmapi&newFormat=1&id=" + ClassZohoJSONPotentialCons.idPotPass + "&" +
                             "xmlData=%3cLeads%3e%3crow%20no=%221%22%3e%3cFL%20val=%22Codigo%22%3e" +
-                            "" + params[2] + "" +
+                            "" + params[1] + "" +
                             "%3c/FL%3e%3c/row%3e%3c/Leads%3e");
                     new ClassZohoXMLPotentialPass().respuesta();
                 }
 
                 if (ClassConexion.msj) {
-                    if (!ClassZohoJSONPotential.correoBusc.equals(params[0]) ||
-                            !ClassZohoJSONPotential.passBusc.equals(params[1])) {
-                        ClassConexion.mensaje = "El correo electrónico y la contraseña no coinciden";
-                    }
-                    else {
-
-
+                    if (!ClassZohoJSONPotentialCons.correoBusc.equals(params[0])) {
+                        ClassConexion.mensaje = "El correo electrónico no se encuentra en la BD";
+                    } else {
+                        Mail m = new Mail("sv3car@gmail.com", "sv3131tes");
+                        String[] toArr = {"sv3car@gmail.com"};
+                        m.setTo(toArr);
+                        m.setFrom("sv3car@gmail.com");
+                        m.setSubject("Nueva Contraseña");
+                        m.setBody("Su contraseña es: " + params[1]);
+                        try {
+                            //m.addAttachment("/sdcard/filelocation");
+                            if(m.send()) {
+                                ClassConexion.mensaje = "Se ha enviado un correo con su contraseña";
+                            } else {
+                                ClassConexion.mensaje = "No se pudo enviar el correo, intente mas tarde";
+                            }
+                        } catch(Exception e) {
+                            //Toast.makeText(MailApp.this, "There was a problem sending the email.", Toast.LENGTH_LONG).show();
+                            Log.e("MailApp", "Could not send email", e);
+                        }
                         control = true;
                     }
                 }
@@ -178,5 +176,14 @@ public class ActivityGenerarPass extends AppCompatActivity {
             }
             return null;
         }
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(ActivityGenerarPass.this, ActivityLogin.class);
+        startActivity(intent);
+        finish();
+        //Añade más funciones si fuese necesario
     }
 }

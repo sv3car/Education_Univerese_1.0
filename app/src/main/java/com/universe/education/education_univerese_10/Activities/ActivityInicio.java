@@ -2,6 +2,9 @@ package com.universe.education.education_univerese_10.Activities;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.AsyncTask;
+import android.os.Handler;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v4.view.ViewPager;
@@ -10,11 +13,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.universe.education.education_univerese_10.Classes.ClassConexion;
 import com.universe.education.education_univerese_10.Classes.ClassViewPagerAdapter;
+import com.universe.education.education_univerese_10.Classes.ClassZohoJSONDocuments;
+import com.universe.education.education_univerese_10.Classes.ClassZohoJSONPotential;
+import com.universe.education.education_univerese_10.Classes.ClassZohoJSONQuotes;
+import com.universe.education.education_univerese_10.Classes.Potential;
 import com.universe.education.education_univerese_10.FragmentsInicio.FragmentInicio1;
 import com.universe.education.education_univerese_10.FragmentsInicio.FragmentInicio2;
 import com.universe.education.education_univerese_10.FragmentsInicio.FragmentInicio3;
 import com.universe.education.education_univerese_10.FragmentsInicio.FragmentInicio4;
+import com.universe.education.education_univerese_10.FragmentsSesion.FragmentSesionHome;
 import com.universe.education.education_univerese_10.R;
 
 public class ActivityInicio extends AppCompatActivity {
@@ -26,7 +35,8 @@ public class ActivityInicio extends AppCompatActivity {
     TextView tv;
     Button btn1;
     Button btn2;
-
+    TabLayout tabLayout;
+    int pos = 0;
     FragmentInicio1 inicio1;
     FragmentInicio2 inicio2;
     FragmentInicio3 inicio3;
@@ -66,12 +76,15 @@ public class ActivityInicio extends AppCompatActivity {
         //mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.container);
 
-
         setupViewPager(mViewPager);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabDots);
+        tabLayout = (TabLayout) findViewById(R.id.tabDots);
         tabLayout.setupWithViewPager(mViewPager, true);
+        tabLayout.getTabAt(0).select();
+        hand1();
 
+        /*TareaAsincrona task = new TareaAsincrona();
+        task.execute();*/
 
         //Evento del boton Register
         btn1.setOnClickListener(new View.OnClickListener(){
@@ -82,8 +95,6 @@ public class ActivityInicio extends AppCompatActivity {
                 finish();
             }
         });
-
-
         //Evento del boton Login
         btn2.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -93,6 +104,43 @@ public class ActivityInicio extends AppCompatActivity {
                 finish();
             }
         });
+
+    }
+
+    private void hand1(){
+        new Handler().postDelayed
+                (new Runnable() {
+                     @Override
+                     public void run()
+                     {
+                         int pos = tabLayout.getSelectedTabPosition();
+                         if (pos == 3) {
+                             pos = -1;
+                         }
+                         tabLayout.getTabAt(pos+1).select();
+                         hand2();
+                     }
+                 },
+                        //Segundos de duración del SplashScream
+                        4000);
+    }
+
+    private void hand2(){
+        new Handler().postDelayed
+                (new Runnable() {
+                     @Override
+                     public void run()
+                     {
+                         int pos = tabLayout.getSelectedTabPosition();
+                         if (pos == 3) {
+                             pos = -1;
+                         }
+                         tabLayout.getTabAt(pos+1).select();
+                         hand1();
+                     }
+                 },
+                        //Segundos de duración del SplashScream
+                        4000);
     }
 
 
@@ -141,5 +189,5 @@ public class ActivityInicio extends AppCompatActivity {
             }
             return null;
         }*/
-    }
+}
 

@@ -13,6 +13,12 @@
         android:layout_height="match_parent"
         android:layout_weight="1">
 
+        <android.support.v4.view.ViewPager
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </android.support.v4.view.ViewPager>
+
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="60dp"
@@ -23,11 +29,6 @@
             android:src="@drawable/icono_contactar"
             android:elevation="10dp"/>
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/content"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </android.support.v4.view.ViewPager>
     </FrameLayout>
 
     <android.support.design.widget.BottomNavigationView

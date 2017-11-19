@@ -129,9 +129,8 @@ public class ActivityLogin extends AppCompatActivity {
         tv_pass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                /*Intent intent = new Intent(ActivityLogin.this,ActivitySesionPrueba.class);
-                startActivity(intent);*/
+                Intent intent = new Intent(ActivityLogin.this,ActivityGenerarPass.class);
+                startActivity(intent);
             }
         });
     }

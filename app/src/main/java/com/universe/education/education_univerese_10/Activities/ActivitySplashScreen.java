@@ -6,8 +6,6 @@ import android.os.Handler;
 import android.os.Bundle;
 import com.universe.education.education_univerese_10.R;
 
-import com.universe.education.education_univerese_10.Activities.ActivityInicio;
-
 public class ActivitySplashScreen extends Activity {
 
     @Override

@@ -43,12 +43,9 @@ public class ClassZohoJSONPotentialCons {
         if (json != null)
         {
             try {
-                Potential potential = new Potential();
                 JSONObject obj1 = new JSONObject(json);
                 JSONObject obj2 = obj1.getJSONObject("response");
-
                 JSONObject resOrNot = obj2.optJSONObject("result");
-
                 if (resOrNot != null) {
                     JSONObject obj3 = obj2.getJSONObject("result");
                     JSONObject obj4 = obj3.getJSONObject("Potentials");
@@ -57,9 +54,10 @@ public class ClassZohoJSONPotentialCons {
                     for (int i = 0; i < arr1.length(); i++) {
                         try {
                             JSONObject obj6 = arr1.getJSONObject(i);
-                            if (obj6.getString("val").equals("Correo electronico")) {
+                            if (obj6.getString("val").equals("POTENTIALID")) {
+                                idPotPass = obj6.getString("content");
+                            }else if (obj6.getString("val").equals("Correo electronico")) {
                                 correoBusc = obj6.getString("content");
-                                potential.setCorreo(correoBusc);
                             }
                             compPot = true;
                         } catch (Exception e) {
@@ -69,7 +67,7 @@ public class ClassZohoJSONPotentialCons {
                         }
                     }
                 } else{
-                    ClassConexion.mensaje = "El correo electrónico no se encuenttra en la base de datos";
+                    ClassConexion.mensaje = "El correo electrónico no se encuenttra en la BD";
                     ClassConexion.msj = false;
                 }
             } catch (Exception e) {

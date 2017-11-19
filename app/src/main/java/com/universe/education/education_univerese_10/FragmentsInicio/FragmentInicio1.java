@@ -19,12 +19,9 @@ public class FragmentInicio1 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_inicio1, container, false);
-
         tv = (TextView) view.findViewById(R.id.textView);
-
         Typeface face = Typeface.createFromAsset(getContext().getAssets(),"fonts/audiowide.ttf");
         tv.setTypeface(face);
-
         return view;
     }
 
