@@ -11,14 +11,15 @@ import java.io.InputStreamReader;
  * Created by CARLOS on 15/11/2017.
  */
 
-public class ClassZohoJSONUpdatePass {
+public class ClassZohoJSONPotentialCons {
 
+    public static Boolean compPot;
     private String json;
     public static String correoBusc;
     public static String idPotPass;
 
-    public ClassZohoJSONUpdatePass() {
-
+    public ClassZohoJSONPotentialCons() {
+        compPot = false;
         json = null;
         correoBusc = "";
         StringBuilder sb;
@@ -60,17 +61,17 @@ public class ClassZohoJSONUpdatePass {
                                 correoBusc = obj6.getString("content");
                                 potential.setCorreo(correoBusc);
                             }
+                            compPot = true;
                         } catch (Exception e) {
                             ClassConexion.msj = false;
                             ClassConexion.mensaje = "Error al obtener los datos";
+                            compPot = false;
                         }
                     }
                 } else{
                     ClassConexion.mensaje = "El correo electrónico no se encuenttra en la base de datos";
                     ClassConexion.msj = false;
                 }
-
-
             } catch (Exception e) {
                 ClassConexion.msj = false;
                 ClassConexion.mensaje = "Error al obtener los datos";

@@ -14,7 +14,7 @@ public class ClassZohoJSONPotential {
     public static Boolean compPot;
 
     public ClassZohoJSONPotential() {
-        compPot = true;
+        compPot = false;
         json = null;
         correoBusc = "";
         passBusc = "";
@@ -80,15 +80,16 @@ public class ClassZohoJSONPotential {
                             } else if (obj6.getString("val").equals("Codigo")) {
                                 passBusc = obj6.getString("content");
                             }
+                            compPot = true;
                         } catch (Exception e) {
                             ClassConexion.msj = false;
                             ClassConexion.mensaje = "Error al obtener los datos";
+                            compPot = false;
                         }
                     }
                 } else{
                     ClassConexion.mensaje = "El correo electrónico y la contraseña no coinciden";
                     ClassConexion.msj = false;
-                    compPot = false;
                 }
 
 

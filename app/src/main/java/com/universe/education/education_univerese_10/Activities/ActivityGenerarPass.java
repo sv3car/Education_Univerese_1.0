@@ -13,17 +13,15 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.universe.education.education_univerese_10.Classes.ClassConexion;
-import com.universe.education.education_univerese_10.Classes.ClassZohoJSONDocuments;
 import com.universe.education.education_univerese_10.Classes.ClassZohoJSONPotential;
-import com.universe.education.education_univerese_10.Classes.ClassZohoJSONQuotes;
-import com.universe.education.education_univerese_10.Classes.ClassZohoJSONUpdatePass;
+import com.universe.education.education_univerese_10.Classes.ClassZohoJSONPotentialCons;
+import com.universe.education.education_univerese_10.Classes.ClassZohoXMLPotentialPass;
 import com.universe.education.education_univerese_10.Classes.PasswordGenerator;
-import com.universe.education.education_univerese_10.Classes.Potential;
 import com.universe.education.education_univerese_10.R;
 
 import java.util.regex.Pattern;
 
-public class ActivityRecuperarPass extends AppCompatActivity {
+public class ActivityGenerarPass extends AppCompatActivity {
 
     private TextView tv1;
     private TextView tv2;
@@ -33,13 +31,14 @@ public class ActivityRecuperarPass extends AppCompatActivity {
     private View v;
     private String email;
     private String psw;
+    private String idPotPass;
 
     protected ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recuperar_pass);
+        setContentView(R.layout.activity_generar_pass);
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar1) ;
         progressBar.setMax(10);
@@ -63,6 +62,7 @@ public class ActivityRecuperarPass extends AppCompatActivity {
             public void onClick(View view) {
                 v = view;
                 email = et_email.getText().toString();
+                idPotPass = ClassZohoJSONPotentialCons.idPotPass;
                 psw = PasswordGenerator.getPassword(
                         PasswordGenerator.MINUSCULAS+
                                 PasswordGenerator.MAYUSCULAS+
@@ -75,7 +75,7 @@ public class ActivityRecuperarPass extends AppCompatActivity {
                     et_email.setError("Email no válido");
                 } else {
                     TareaAsincrona task = new TareaAsincrona();
-                    task.execute(email,psw);
+                    task.execute(idPotPass,email,psw);
                     /*Intent intent = new Intent(ActivityLogin.this, ActivitySesion.class);
                     FragmentSesionHome.ContrFrag = false;
                     startActivity(intent);
@@ -148,27 +148,27 @@ public class ActivityRecuperarPass extends AppCompatActivity {
                         "selectColumns=" +
                         "Potentials(" +
                         "Correo%20electronico)&" +
-                        "criteria=(Correo%20electronico:"+params[0]+")");
-
-                new ClassZohoJSONPotential();
+                        "criteria=(Correo%20electronico:"+params[1]+")");
+                new ClassZohoJSONPotentialCons();
 
                 if (ClassZohoJSONPotential.compPot){
-                    new ClassConexion("https://crm.zoho.com/crm/private/xml/Leads" +
+                    new ClassConexion("https://crm.zoho.com/crm/private/xml/Potentials" +
                             "/updateRecords?authtoken=8b49fd4b66f4a9e2098d9c2d79652405" +
-                            "&scope=crmapi&newFormat=1&id=" + ClassZohoJSONUpdatePass.idPotPass + "&" +
+                            "&scope=crmapi&newFormat=1&id=" + params[0] + "&" +
                             "xmlData=%3cLeads%3e%3crow%20no=%221%22%3e%3cFL%20val=%22Codigo%22%3e" +
-                            "" + params[1] + "" +
+                            "" + params[2] + "" +
                             "%3c/FL%3e%3c/row%3e%3c/Leads%3e");
-                    new ClassZohoJSONUpdatePass();
+                    new ClassZohoXMLPotentialPass().respuesta();
                 }
 
                 if (ClassConexion.msj) {
                     if (!ClassZohoJSONPotential.correoBusc.equals(params[0]) ||
                             !ClassZohoJSONPotential.passBusc.equals(params[1])) {
-                        control = false;
                         ClassConexion.mensaje = "El correo electrónico y la contraseña no coinciden";
                     }
                     else {
+
+
                         control = true;
                     }
                 }
