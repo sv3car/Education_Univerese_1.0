@@ -28,7 +28,7 @@
 
                     <ImageView
                         android:id="@+id/iViewDoc"
-                        android:layout_width="190px"
+                        android:layout_width="230px"
                         android:layout_height="190px"
                         android:scaleType="fitXY">
 

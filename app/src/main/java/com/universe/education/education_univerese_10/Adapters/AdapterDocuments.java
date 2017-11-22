@@ -65,23 +65,24 @@ public class AdapterDocuments extends RecyclerView.Adapter<AdapterDocuments.vVie
     @Override
     public void onBindViewHolder(vViewHolder viewHolder, int i) {
 
-        String sizeStr = items.get(i).getDocSize();
+        /*String sizeStr = items.get(i).getDocSize();
         String nameStr = items.get(i).getDocName();
 
         int posPunto = nameStr.indexOf(".");
         int lengthName = nameStr.length();
-        String ext;
 
+        String ext;
         try{
             ext = nameStr.substring(posPunto, lengthName);
         } catch (Exception e){
             ext = "noData";
-        }
+        }*/
 
         viewHolder.nameDoc.setText(items.get(i).getDocName());
-        viewHolder.sizeDoc.setText(size(Integer.parseInt(sizeStr)));
+        viewHolder.sizeDoc.setText(size(Integer.parseInt(items.get(i).getDocSize())));
+        viewHolder.iViewDoc.setImageResource(R.drawable.img_doc);
 
-        if (ext.equals(".pdf")){
+        /*if (ext.equals(".pdf")){
             viewHolder.iViewDoc.setImageResource(R.drawable.img_pdf);
         } else if (ext.equals(".docx") || ext.equals(".docm") ||
                     ext.equals(".dotx") || ext.equals(".dotm")){
@@ -94,7 +95,7 @@ public class AdapterDocuments extends RecyclerView.Adapter<AdapterDocuments.vVie
             viewHolder.iViewDoc.setImageResource(R.drawable.img_powerpoint);
         } else {
             viewHolder.iViewDoc.setImageResource(R.drawable.img_desco);
-        }
+        }*/
 
     }
     public String size(int size){

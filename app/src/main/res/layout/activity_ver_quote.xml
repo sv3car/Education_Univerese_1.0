@@ -323,12 +323,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1">
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:backgroundTint="@color/btns_sesion"
-                android:shadowColor="#616161"
+
                 android:text="Descargar como PDF" />
 
         </RelativeLayout>
