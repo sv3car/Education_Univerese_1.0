@@ -32,7 +32,7 @@ public class ActivityInicio extends AppCompatActivity {
 
     private ViewPager mViewPager;
 
-    TextView tv;
+    //TextView tv;
     Button btn1;
     Button btn2;
     TabLayout tabLayout;
@@ -62,12 +62,12 @@ public class ActivityInicio extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
 
-        tv = (TextView) findViewById(R.id.textView);
+        //tv = (TextView) findViewById(R.id.textView);
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);
 
-        Typeface bell_centennial = Typeface.createFromAsset(getAssets(),"fonts/bell_centennial.otf");
-        tv.setTypeface(bell_centennial);
+        /*Typeface bell_centennial = Typeface.createFromAsset(getAssets(),"fonts/bell_centennial.otf");
+        tv.setTypeface(bell_centennial);*/
 
         Typeface enigma = Typeface.createFromAsset(getAssets(),"fonts/enigma.ttf");
         btn1.setTypeface(enigma);

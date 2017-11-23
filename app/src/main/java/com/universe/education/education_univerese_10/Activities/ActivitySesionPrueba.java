@@ -20,8 +20,7 @@ public class ActivitySesionPrueba extends AppCompatActivity implements View.OnCl
         FragmentSesion1.OnFragmentInteractionListener,
         FragmentSesionHome.OnFragmentInteractionListener,
         FragmentSesionVideos.OnFragmentInteractionListener,
-        FragmentSesion4.OnFragmentInteractionListener,
-        FragmentSesionAbout.OnFragmentInteractionListener{
+        FragmentSesion4.OnFragmentInteractionListener{
 
     /*private ViewPager mViewPager;
 

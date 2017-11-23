@@ -38,7 +38,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginBottom="21dp"
+                android:layout_marginBottom="15dp"
                 app:tabBackground="@drawable/tab_selector"
                 app:tabGravity="center"
                 app:tabIndicatorHeight="0dp" />
@@ -50,7 +50,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="55dp">-->
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
                 android:textColor="#ffffff"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="10dp" />-->
         </RelativeLayout>
 
 

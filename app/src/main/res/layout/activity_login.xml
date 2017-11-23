@@ -73,7 +73,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="40dp"
-                android:text="Log intro your account and continue to eat healthy."
+                android:text="Ingrese su email y contraseña asociados a Education Universe"
                 android:textAlignment="center"
                 android:textColor="#ffffff"
                 android:textSize="15dp" />

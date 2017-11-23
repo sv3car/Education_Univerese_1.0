@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.universe.education.education_univerese_10.Classes.ClassViewPagerAdapter;
@@ -29,10 +30,11 @@ public class ActivitySesion extends AppCompatActivity {
     private ViewPager mViewPager;
 
     MenuItem prevMenuItem;
-
+    FloatingActionButton fab;
     FragmentSesionHome sesion2;
     FragmentSesionVideos sesion3;
     FragmentSesionAbout sesion5;
+    Button btnCerr;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -42,12 +44,15 @@ public class ActivitySesion extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     mViewPager.setCurrentItem(0);
+                    fab.show();
                     break;
                 case R.id.navigation_video:
                     mViewPager.setCurrentItem(1);
+                    fab.show();
                     break;
                 case R.id.navigation_about:
                     mViewPager.setCurrentItem(2);
+                    fab.hide();
                     break;
             }
             return false;
@@ -79,7 +84,16 @@ public class ActivitySesion extends AppCompatActivity {
         ZohoSalesIQ.Chat.setLanguage(new Locale("es"));
         ZohoSalesIQ.Visitor.startChat("Hi I need assistance");
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        btnCerr = (Button) findViewById(R.id.btnCerr);
+
+        btnCerr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ShowDialog();
+            }
+        });
+
+        fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -93,7 +107,7 @@ public class ActivitySesion extends AppCompatActivity {
 
         mViewPager = (ViewPager) findViewById(R.id.content);
 
-        mViewPager.setCurrentItem(0);
+        mViewPager.setCurrentItem(1);
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
@@ -113,7 +127,15 @@ public class ActivitySesion extends AppCompatActivity {
                 }
                 Log.d("page", "onPageSelected: "+position);
                 navigation.getMenu().getItem(position).setChecked(true);
-                prevMenuItem = navigation.getMenu().getItem(position);}
+                prevMenuItem = navigation.getMenu().getItem(position);
+                if (position == 0){
+                    fab.show();
+                }else if(position == 1){
+                    fab.show();
+                }else{
+                    fab.hide();
+                }
+            }
 
             @Override
             public void onPageScrollStateChanged(int state) {
